@@ -14,7 +14,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
@@ -70,6 +70,29 @@
       border-bottom: 1px solid #d0e3f7;
     }
 
+    .welcome-banner span {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Center image panel */
+    .image-panel {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      padding: 10px;
+    }
+
+    .image-panel img {
+      width: 95%;
+      max-height: 380px;
+      object-fit: contain;
+      border-radius: 18px;
+    }
+
     .footer {
       font-size: 0.7rem;
       text-align: center;
@@ -78,7 +101,7 @@
       background: #f0f2f7;
     }
 
-    /* Position floating chatbot */
+    /* Floating Dialogflow chatbot */
     df-messenger {
       z-index: 999;
       position: fixed;
@@ -115,14 +138,17 @@
       Appointment Schedule & Support Chatbot
     </div>
 
-    <div style="flex-grow: 1;"></div>
+    <!-- Mascot image in the middle -->
+    <div class="image-panel">
+      <img src="imagedental.jpg" alt="BrightSmile Dental Assistant" />
+    </div>
 
     <div class="footer">
-      Powered by BrightSmile Dental Care 
+      Powered by BrightSmile Dental Care · Hosted on GitHub Pages
     </div>
   </div>
 
-  <!-- YOUR CHATBOT COMPONENT -->
+  <!-- Dialogflow Messenger component -->
   <df-messenger
     location="us-central1"
     project-id="artful-reactor-471705-t8"
