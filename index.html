@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BrightSmile Dental Care Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Dialogflow Messenger Assets -->
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: url("55104.jpg") center center / cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: -1;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 420px;
+      min-height: 520px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .header {
+      padding: 14px 18px;
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: #fff;
+    }
+
+    .header-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .header-subtitle {
+      font-size: 0.78rem;
+      opacity: 0.9;
+    }
+
+    .welcome-banner {
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      text-align: center;
+      background: #e3f2fd;
+      color: #0b4f6c;
+      border-bottom: 1px solid #d0e3f7;
+    }
+
+    .footer {
+      font-size: 0.7rem;
+      text-align: center;
+      padding: 6px 8px 10px;
+      color: #555;
+      background: #f0f2f7;
+    }
+
+    /* Position floating chatbot */
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: Lato;
+      --df-messenger-chat-background: #FCE8B2;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .wrapper {
+        max-width: 100%;
+        height: 100vh;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+  <div class="wrapper">
+    <header class="header">
+      <div class="header-title">BrightSmile Dental Care Agent</div>
+      <div class="header-subtitle">Your 24/7 virtual receptionist</div>
+    </header>
+
+    <div class="welcome-banner">
+      <span>Welcome to BrightSmile Dental Care</span>
+      Appointment Schedule & Support Chatbot
+    </div>
+
+    <div style="flex-grow: 1;"></div>
+
+    <div class="footer">
+      Powered by BrightSmile Dental Care 
+    </div>
+  </div>
+
+  <!-- YOUR CHATBOT COMPONENT -->
+  <df-messenger
+    location="us-central1"
+    project-id="artful-reactor-471705-t8"
+    agent-id="6fe982e4-8211-496a-8c20-235edca4b0d9"
+    language-code="en"
+    max-query-length="-1">
+    <df-messenger-chat-bubble chat-title="bright smile"></df-messenger-chat-bubble>
+  </df-messenger>
+
+</body>
+</html>
+
